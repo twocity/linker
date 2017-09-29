@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+apply plugin: "kotlin"
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+dependencies {
+  implementation deps.kotlin
+  testImplementation deps.junit
+}

@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    applicationId "me.twocities.linker.example"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+//  sourceSets {
+//    debug {
+//      main.java.srcDirs += [file("$buildDir/generated/source/kaptKotlin/debug")]
+//    }
+//    release {
+//      main.java.srcDirs += [file("$buildDir/generated/source/kaptKotlin/release")]
+//    }
+//  }
+}
+
+dependencies {
+  implementation deps.supportV7
+  implementation project(':example-library')
+  implementation project(':linker-annotations')
+  implementation project(':linker-library')
+  kapt project(':linker-compiler')
+  implementation deps.kotlin
+  testImplementation deps.junit
+}

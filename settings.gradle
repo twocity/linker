@@ -1,0 +1,2 @@
+include ':example', ':linker-annotations', ':linker-library',
+    ':linker-compiler', ':example-library'

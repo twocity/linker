@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="me.twocities.linker.example.MainActivity"
+    >
+
+  <Button
+      android:id="@+id/productButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="product"
+      tools:ignore="HardcodedText"
+      />
+
+  <Button
+      android:id="@+id/orderButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="order"
+      tools:ignore="HardcodedText"
+      />
+
+  <Button
+      android:id="@+id/invalidButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="invalid"
+      tools:ignore="HardcodedText"
+      />
+
+  <Button
+      android:id="@+id/interceptorButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="interceptor"
+      tools:ignore="HardcodedText"
+      />
+
+
+  <Button
+      android:id="@+id/fallback"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="fallback"
+      tools:ignore="HardcodedText"
+      />
+
+  <Button
+      android:id="@+id/libraryButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="library"
+      tools:ignore="HardcodedText"
+      />
+
+</LinearLayout>
