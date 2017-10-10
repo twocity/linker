@@ -1,15 +1,16 @@
-## Linker
-Linker, a light weight URI routing framework for Android.
+# Linker
 
-### Usage
+Linker provides an annotation-based API to handle URI routing for Android. This library is written in kotlin, and the generated codes are also pure kotlin.
+
+## Usage
 
 There are two parts of Linker: annotations and `LinkResolver`
 
-#### Annotations
+### Annotations
 
 __@Link for activity__
 
-Use annotation `@Link` indicate which uri was respect:
+Use annotation `@Link` indicate which URI was respect:
 
 ```kotlin
 @Link("link://product/detail{id})
@@ -63,7 +64,7 @@ val resolver = LinkerExampleLinkResolverBuilder(context).build()
 ```
 
 
-#### LinkResolver
+### LinkResolver
 
 The definition of LinkResolver is much simpler:
 
@@ -87,7 +88,7 @@ startActivity("link://product/detail/123")
 ```
 see `ObjectGraph` for more details.
 
-### Advance
+## Advance
 
 Linker also provide other mechanisms: `Interceptor`, `FallbackHandler`, which you can change the behavior of a link. You can add interceptors or set fallback handler by the generated builder class:
 
@@ -101,7 +102,7 @@ Linker also provide other mechanisms: `Interceptor`, `FallbackHandler`, which yo
 
 the Listener will be notified when an link was resolved.
 
-#### Interceptors
+### Interceptors
 
 The interceptor will give you an ability to change a link's intent, or put extra values to activity
 
@@ -118,21 +119,26 @@ class HttpUrlInterceptor(private val context: Context) : Interceptor {
 }
 ```
 
-#### FallbackHandler
+### FallbackHandler
 
 If there's no activities match with the given link, or no interceptors has intercepted, the fallback handler be called. The [FallbackHandler] gives you the ability to handle unknown link: start another activity or show an error page.
 
-### Known issues
+## Known issues
 
 + Generated kotlin files was not recognized by AndroidStudio automatically. see [KT-20269](https://youtrack.jetbrains.com/issue/KT-20269)
 
-### TODO
+## TODO
 
++ [ ] Deploy to Maven Center
 + [ ] Generate link's builder when compiling
 + [ ] Support multi links for per activity
 + [ ] More unit tests
 
-### Credit
+## Credit
 
 + [DeepLinkDispatch](https://github.com/airbnb/DeepLinkDispatch)
 + [ButterKnife](https://github.com/JakeWharton/butterknife)
+
+## License
+
+Apache License, Version 2.0
