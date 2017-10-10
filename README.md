@@ -1,4 +1,4 @@
-# Linker
+# Linker [![Build Status](https://travis-ci.org/twocity/linker.svg?branch=master)](https://travis-ci.org/twocity/linker)
 
 Linker provides an annotation-based API to handle URI routing for Android. This library is written in kotlin, and the generated codes are also pure kotlin.
 
