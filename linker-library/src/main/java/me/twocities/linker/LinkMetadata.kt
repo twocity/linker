@@ -33,9 +33,6 @@ class LinkMetadata(val rawLink: String, val target: Class<*>,
    * Predicate `link` can matches with [rawLink]
    */
   fun matches(link: String): Boolean {
-    println("====")
-    println(regex)
-    println("====")
     val inputUri = DeepLinkUri.parse(link)
     return inputUri != null && regex.matcher(schemeHostAndPath(inputUri)).matches()
   }
