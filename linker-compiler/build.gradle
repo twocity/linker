@@ -10,3 +10,29 @@ dependencies {
   testImplementation deps.junit
   testImplementation deps.truth
 }
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+  outputFormat = 'html'
+  outputDirectory = "$buildDir/javadoc"
+  sourceDirs = files('src/main/java')
+  kotlinTasks {
+    [":linker-annotations:compileKotlin"]
+  }
+}
+
+task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+  classifier = 'javadoc'
+  from "$buildDir/javadoc"
+}
+
+task sourcesJar(type: Jar) {
+  classifier = 'sources'
+  from sourceSets.main.java.source
+}
+
+artifacts {
+  archives sourcesJar
+  archives javadocJar
+}
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
