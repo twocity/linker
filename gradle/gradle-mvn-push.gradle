@@ -25,12 +25,12 @@ def isReleaseBuild() {
 }
 
 def getReleaseRepositoryUrl() {
-  return hasProperty('RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL :
+  return hasProperty('SONATYPE_RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL :
       "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
 }
 
 def getSnapshotRepositoryUrl() {
-  return hasProperty('SNAPSHOT_REPOSITORY_URL') ? SNAPSHOT_REPOSITORY_URL :
+  return hasProperty('SONATYPE_SNAPSHOT_REPOSITORY_URL') ? SNAPSHOT_REPOSITORY_URL :
       "https://oss.sonatype.org/content/repositories/snapshots/"
 }
 
