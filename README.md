@@ -2,6 +2,17 @@
 
 Linker provides an annotation-based API to handle URI routing for Android. This library is written in kotlin, and the generated codes are also pure kotlin.
 
+## Dependencies
+
+Add the following to your `build.gradle` file:
+
+```groovy
+dependencies {
+	api 'me.twocities:linker:0.0.5'
+	kapt 'me.twocities:linker-compiler:0.0.5'
+}
+```
+
 ## Usage
 
 There are two parts of Linker: annotations and `LinkResolver`
@@ -86,7 +97,7 @@ Thanks to kotlin, we can simplify this by writing extension function like this:
 ```kotlin
 startActivity("link://product/detail/123")
 ```
-see `ObjectGraph` for more details.
+see [ObjectGraph](https://github.com/twocity/linker/blob/master/example/src/main/java/me/twocities/linker/example/ObjectGraph.kt) for more details.
 
 ## Advance
 
@@ -129,7 +140,6 @@ If there's no activities match with the given link, or no interceptors has inter
 
 ## TODO
 
-+ [ ] Deploy to Maven Center
 + [ ] Generate link's builder when compiling
 + [ ] Support multi links for per activity
 + [ ] More unit tests
