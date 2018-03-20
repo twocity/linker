@@ -134,10 +134,6 @@ class HttpUrlInterceptor(private val context: Context) : Interceptor {
 
 If there's no activities match with the given link, or no interceptors has intercepted, the fallback handler be called. The [FallbackHandler] gives you the ability to handle unknown link: start another activity or show an error page.
 
-## Known issues
-
-+ Generated kotlin files was not recognized by AndroidStudio automatically. see [KT-20269](https://youtrack.jetbrains.com/issue/KT-20269)
-
 ## TODO
 
 + [ ] Generate link's builder when compiling

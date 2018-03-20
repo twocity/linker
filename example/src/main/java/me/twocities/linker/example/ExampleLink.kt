@@ -4,7 +4,7 @@ import me.twocities.linker.annotations.LinkModule
 import me.twocities.linker.annotations.LinkResolverBuilder
 import me.twocities.linker.example.library.LibraryLinkModule
 
-@LinkResolverBuilder(modules = arrayOf(ExampleLinkModule::class, LibraryLinkModule::class))
+@LinkResolverBuilder(modules = [(ExampleLinkModule::class), (LibraryLinkModule::class)])
 interface ExampleLinkResolverBuilder
 
 @LinkModule

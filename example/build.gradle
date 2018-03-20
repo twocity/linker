@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+apply from: "${rootDir}/gradle/config-kotlin-sources.gradle"
+
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
@@ -21,15 +23,6 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-
-//  sourceSets {
-//    debug {
-//      main.java.srcDirs += [file("$buildDir/generated/source/kaptKotlin/debug")]
-//    }
-//    release {
-//      main.java.srcDirs += [file("$buildDir/generated/source/kaptKotlin/release")]
-//    }
-//  }
 }
 
 dependencies {
