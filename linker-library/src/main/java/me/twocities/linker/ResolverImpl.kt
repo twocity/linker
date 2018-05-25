@@ -45,7 +45,7 @@ class ResolverImpl(private val context: Context,
     }
 
     if (intent != null) {
-      intent.putExtra(LINK, link)
+      intent.putLink(link)
       listener?.onSuccess(link, intent)
     }
     return Result(intent)
